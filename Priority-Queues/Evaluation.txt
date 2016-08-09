@@ -1,0 +1,8 @@
+Kyle Widmann
+CS2123 - Data Structures
+Assignment 3
+27 June 2016
+
+Which implementation seems to be more efficient with respect to insertions (how can you determine this based on the information that your programs provide)? Roughly how much more efficient is the implementation? You dont have to write much, but please write in complete sentences.
+
+	The implementation with the doubly linked list seems to be much more efficient.  The linearly linked list took 130 comparisons over the course of the insertions, and the doubly linked list only took 61.  Given our input size, that is roughly 210% more efficient.  The biggest reduction in comparisons came from being able to check the rear node, since this means we only have to compare at most two nodes, first and last, to see if the values falls outside our current high and lows.  This means as our list grows we no longer have to traverse every single node.  Additionally it saved a few comparisons by allowing us to start on the side of the list that was presumably closer to where our value should go, since we can estimated the middle value of the list with increasing accuracy as the list grows with the calculation of the highest value divided by two.
